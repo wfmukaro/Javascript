@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+            border-radius: 10px;
+            margin-left: 40%;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="logo.png" alt="" id="pictures"><br>
+        <button id="back">Backward</button>
+        <button id="next">Forward</button>
+        <button id="auto">Auto Slideshow</button>
+        <button id="stop" disabled>Stop Slideshow</button>
+    </section>
+    <script>
+        document.getElementById("back").onclick=backward;
+        document.getElementById("next").onclick=forward;
+        document.getElementById("auto").onclick=autoslide;
+        document.getElementById("stop").onclick=stopslide;
+        let images=["pic1.jpg","pic2.jpg","logo.png","pic3.jpg","pic4.jpg","pic5.jpg"]
+        let index =0;
+function forward(){
+index++
+if (index>images.length-1) {
+    index=0;
+  
+}
+document.getElementById("pictures").setAttribute("src",images[index])
+}
+function backward() {
+   index--
+   if (index==-1) {
+       index=images.length-1
+   } 
+   document.getElementById("pictures").setAttribute("src",images[index])
+}
+function autoslide() {
+t=setInterval(forward,2000)
+document.getElementById("auto").disabled=true
+document.getElementById("stop").disabled=false
+
+}  
+   function stopslide(){
+       clearInterval(t)
+       document.getElementById("auto").disabled=false;
+       document.getElementById("stop").disabled=true;
+   }
+    </script>
+</body>
+</html>

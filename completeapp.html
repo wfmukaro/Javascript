@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name"><br>
+        <label for="age">Date of Birth</label>
+        <input type="date" id="dob"><br>
+        <label for="job">Job Title</label>
+        <input type="text" id="job"><br>
+        <label for="salary">Salary</label>
+        <input type="number" id="salary"><br>
+        <input type="button" value="Enter Employee Details" id="form1">
+
+    </form>
+    <br><br>
+    <table id="table" border="1">
+
+    </table>
+    
+    <script>
+document.getElementById("form1").onclick=extractData;
+let workers=[];
+function extractData(){
+    let fname=document.getElementById("name").value;
+    let age=document.getElementById("dob").value;
+    let job=document.getElementById("job").value;
+    let salary=document.getElementById("salary").value;
+    console.log(fname, age,job,salary,);
+    workers.push({name:fname,age:age,job:job,salary:salary})
+    let table=document.getElementById("table")
+table.innerHTML="<tr><th>Name</th><th>Date of Birth</th><th>Job Title</th><th>Salary</th></tr>";
+for (const worker of workers) {
+    table.innerHTML +="<tr><td>"+worker.name +"</td><td>"+worker.age+"</td><td> "+worker.job+"</td><td>"+worker.salary+"</td><tr>";
+}
+}
+  /// create a form to capture car details and us a table to print the captured deatails data
+    //  // let cars=[
+        //     {name:"Benz", model:"c180", year:2008, price:80000},
+        //     {name:"toyota", model:"D4D", year:2019, price:250000},
+        //     {name:"BMW", model:"e250i", year:2014, price:160000}
+        // ]
+        ///////events
+
+
+
+
+    </script>
+</body>
+</html>

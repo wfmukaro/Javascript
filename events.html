@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- inline event handler -->
+    <button onclick="alert('This is an inline event but not recommended')">Click</button>
+    <p id="para1" onmouseover="document.getElementById('para1').style.backgroundColor='red'" onmouseout="document.getElementById('para1').style.backgroundColor='green'">Move the mouse pointer here</p>
+   <!-- older event handler -->
+   <button id="oldevent">Click me</button><br>
+   <p id="para2">
+    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used before final copy is available, but it may also be used to temporarily replace copy in a process called greeking, which allows designers to consider form without the meaning of the text influencing the design.
+   </p>
+   <button id="changestyle">Change Style</button><br><br><br><br>
+   <button id="many">Many Events</button>
+
+   <script>
+   document.getElementById("oldevent").onclick=output;
+   function output(){
+       alert("This is an older event but not recommended")
+   }
+   //write a program that changes the style of a paragraph whenthe change style button is clicked.
+document.getElementById("changestyle").onclick=changeStyle;
+function changeStyle(){
+    let para2=document.getElementById("para2");
+    para2.style.fontFamily="Arial";
+    para2.style.margin="300px";
+    para2.style.border="5px solid";
+    para2.style.backgroundColor="#"+Math.random().toString(16).substring(2,8);
+}
+///Event Listeners
+let manyEvent=document.getElementById("many");
+manyEvent.addEventListener("click",()=>console.log("single click"));
+manyEvent.addEventListener("dblclick",function (){ console.log("double click");})
+//manyEvent.addEventListener("mousedown",changeStyle);
+manyEvent.addEventListener("mouseout", bye);
+function bye(){
+    manyEvent.innerHTML="Goodbye. The button for many is removed"
+}
+// write a code that adds an image to the web page when the user clicks a button
+   </script>
+</body>
+</html>

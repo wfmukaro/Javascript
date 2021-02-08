@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="class1">web development</h1>
+    <section>
+        <h1 id="web">Programing Languages</h1>
+        <ul>
+            <li>html5</li>
+            <li>Css3</li>
+            <li class="class1">javascript</li>
+            <li name="library">Jquery</li>
+            <li>Nodejs</li>
+        </ul>
+    </section>
+    <h1>Modules</h1>
+    <p id="para1"></p>
+<img id="picture" src="pic1.jpg"/><br>
+<a id="link">Web Page</a>
+<table border="1" id="hr">
+
+</th>
+</table>
+<table id="car" border="1">
+
+</table>
+    <script>
+        ///geting elements
+        //1 get elements using the tag names-return a collection
+    //     let headings=document.getElementsByTagName("h1")
+    //     console.log(headings);
+    //     for (let i = 0; i <headings.length; i++) {
+    //         console.log(headings[i].innerText);
+            
+    //     }
+    //     ///convert all heading to uppercase
+    //    for (let i = 0; i < headings.length; i++) {
+    //       headings[i].innerText=headings[i].innerText.toUpperCase();
+    //        }
+    //        //access the first heading change the background color to grey.
+    //        headings[0].style.backgroundColor="grey";
+        //
+        ////////////////////////////////////////
+///2. get element by id 
+// let web1=document.getElementById("web");
+// console.log(web1.innerHTML);
+// web1.style.color="red";
+// web1.style.textAlign="right"
+// web1.style.fontFamily="Algerian"
+// document.getElementById("para1").innerHTML="This paragraph created using javascript"
+///3 get element by class name
+///// 
+// let class1=document.getElementsByClassName("class1")
+// console.log(class1);
+// for (let i = 0; i < class1.length; i++) {
+//     class1[i].style.color="brown";
+//     class1[i].style.border=" 3px dotted red"
+    
+// }
+/////////4 get elements by name 
+// let getName=document.getElementsByName("library")
+// console.log(getName[0].innerHTML);
+///Extract all programming langauages and prints them on console,
+///change the font color to red and change to UpperCase
+// tags=document.getElementsByTagName("li")
+//         for (let i = 0; i < tags.length; i++) {
+//             tags[i].style.color="red"
+//             tags[i].innerText=tags[i].innerText.toUpperCase();        
+//         }
+/////////change attributes
+// document.getElementById("picture").setAttribute("src","pic2.jpg");
+// document.getElementById("picture").setAttribute("height","200px")
+// document.getElementById("link").setAttribute("href","https://www.belgiumcampus.ac.za/")
+
+//     let workers=[
+//     {name:"peter",age:45,job:"IT suport",salary:2000},
+//     {name:"sma",age:45,job:"DBD developer",salary:222000},
+//     {name:"james",age:45,job:"BI analyst",salary:72000},
+//     {name:"thato",age:45,job:"Manager",salary:26000},
+//     {name:"samuel",age:45,job:"IT suport",salary:42000},
+//     {name:"zane",age:45,job:"Accountant",salary:207800}
+// ]
+// let table=document.getElementById("hr");
+// table.innerHTML="<tr><th>Name</th><th>Age</th><th>Job</th><th>Salary</th></tr>"
+// for (let i = 0; i< workers.length; i++) {
+//   table.innerHTML += "<tr><td>"+workers[i].name+ "</td><td> "+workers[i].age + "</td><td> "+ workers[i].job+" </td><td>"+workers[i].salary+"</td></tr>";
+//     }
+    /// create a table and use javacript to insert the following data
+    //  // let cars=[
+        //     {name:"Benz", model:"c180", year:2008, price:80000},
+        //     {name:"toyota", model:"D4D", year:2019, price:250000},
+        //     {name:"BMW", model:"e250i", year:2014, price:160000}
+        // ]
+        ///////events
+        let cars=[
+        {name:"Benz", model:"c180", year:2008, price:80000},
+        {name:"toyota", model:"D4D", year:2019, price:250000},
+        {name:"BMW", model:"e250i", year:2014, price:160000}
+        ]
+
+        let table = document.getElementById("car");
+        table.innerHTML="<tr><th>Name</th><th>Model</th><th>Year</th><th>Price</th></tr>"
+        for (let i = 0; i < cars.length; i++) {
+            table.innerHTML+= "<tr><td>"+cars[i].name+"</td><td>"+cars[i].model+"</td><td>"+cars[i].year+"</td><td>"+cars[i].price+"</td></tr>"
+            
+        }
+
+    
+    </script>    
+</body>
+</html>

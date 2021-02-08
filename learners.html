@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name"><br>
+        <label for="model">Model</label>
+        <input type="text" id="model"><br>
+        <label for="year">Year</label>
+        <input type="number" id="year"><br>
+        <label for="price">Price</label>
+        <input type="number" id="price"><br>
+        <input type="button" value="Enter car Details" id="form2">
+
+    </form>
+    <table id="table">
+
+    </table>
+    <script>
+document.getElementById("form2").onclick=getData;
+        let cars=[];
+        function getData(){
+            let name=document.getElementById("name").value;
+            let model=document.getElementById("model").value;
+            let year=document.getElementById("year").value;
+            let price=document.getElementById("price").value;
+            
+            cars.push({name:name,model:model,year:year,price:price})
+            let table=document.getElementById("table")
+            table.innerHTML="<tr><th>Name</th><th>Model</th><th>Year</th><th>Price</th></tr>"
+                for (let i = 0; i < cars.length; i++) {
+                    table.innerHTML+= "<tr><td>"+cars[i].name+"</td><td>"+cars[i].model+"</td><td>"+cars[i].year+"</td><td>"+cars[i].price+"</td></tr>"
+                    
+                }
+            }
+    </script>
+
+
+</body>
+</html>
